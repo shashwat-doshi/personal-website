@@ -41,21 +41,41 @@
 
         .imgContainer {
             // transform: scale(0.97);
-            width: 400px;
-            height: 400px;
+            width: 600px;
+            height: 600px;
             // background-color: crimson;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            float: right;
+            padding-right: 10vh;
+            padding-bottom: 10vh;
 
             img {
                 height: 90%;
             }
         }
 
-        #introDesc {
-            text-transform: lowercase;
+        .introText {
+            align-items: center;
+            justify-content: center;
+            padding-top: 35vh;
+
+            #introName {
+                font-size: 45px;
+                color: $mainColor;
+            }
+
+            #introDesc {
+
+                @import url('http://fonts.cdnfonts.com/css/american-typewriter');
+                font-family: 'American Typewriter', sans-serif;
+
+                color: tan;
+
+                font-size: 30px;
+                padding-top: 6vh;
+            }
         }
 
 
@@ -74,7 +94,7 @@
                 display: flex;
                 align-items: flex-end;
                 justify-content: center;
-                float: right;
+                float: left;
 
                 img {
                     height: 90%;

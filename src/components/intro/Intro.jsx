@@ -95,10 +95,10 @@ export default function Intro() {
         title: {
             color: "tomato",
         },
-        subtitle: {
-            color: "tan",
-            textTransform: "uppercase",
-        },
+        // subtitle: {
+        //     color: "tan",
+        //     //textTransform: "uppercase",
+        // },
         typedContainer: {
             position: "absolute",
             top: "50%",
@@ -117,27 +117,33 @@ export default function Intro() {
             <div className="intro">
                 <Box className={classes.typedContainer}>
                     <div className="imgContainer">
-                        <img src="assets/introPic.png"></img>
+                        <img src="assets/home-main.svg"></img>
                     </div>
-                    <Typography className={classes.title} id="introName" variant="h4">
-                        <Typed strings={["Shashwat Doshi"]} typeSpeed={40} />
-                    </Typography>
 
-                    <Typography className={classes.subtitle} id="introDesc" variant="h5">
-                        <Typed
-                            strings={[
-                                "student ",
-                                "developer ",
-                                "learner ",
-                                "foodie ",
-                                "cricket enthusiast ",
-                                "chocolate-lover ",
-                            ]}
-                            typeSpeed={70}
-                            backSpeed={50}
-                            loop
-                        />
-                    </Typography>
+                    <div className="introText">
+                        <Typography className={classes.title} id="introName" variant="h4">
+                            <Typed strings={["Shashwat Doshi"]} typeSpeed={40} />
+                        </Typography>
+
+                        <Typography className={classes.subtitle} id="introDesc" variant="h5">
+                            <Typed
+                                strings={[
+                                    "I am a student",
+                                    "I am a developer",
+                                    "I am a learner",
+                                    "I am a foodie",
+                                    "I am a cricket enthusiast",
+                                    "I am a chocolate-lover",
+                                ]}
+                                typeSpeed={90}
+                                backSpeed={60}
+                                smartBackspace
+                                loop
+                                showCursor
+                                cursorChar="|"
+                            />
+                        </Typography>
+                    </div>
                 </Box>
             </div>
             {/* <div className="intro" id="intro">
