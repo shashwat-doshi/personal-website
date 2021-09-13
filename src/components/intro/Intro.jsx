@@ -95,10 +95,11 @@ export default function Intro() {
         title: {
             color: "tomato",
         },
-        // subtitle: {
-        //     color: "tan",
-        //     //textTransform: "uppercase",
-        // },
+        subtitle: {
+            color: "tan",
+            //textTransform: "uppercase",
+            // font: "monospace",
+        },
         typedContainer: {
             position: "absolute",
             top: "50%",

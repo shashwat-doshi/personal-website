@@ -57,6 +57,7 @@
         }
 
         .introText {
+            @import url('http://fonts.cdnfonts.com/css/american-typewriter');
             align-items: center;
             justify-content: center;
             padding-top: 35vh;
@@ -68,8 +69,14 @@
 
             #introDesc {
 
-                @import url('http://fonts.cdnfonts.com/css/american-typewriter');
+                // @import url('http://fonts.cdnfonts.com/css/american-typewriter');
+                // font-family: 'American Typewriter', sans-serif;
+
+                // @import url('http://fonts.cdnfonts.com/css/american-typewriter');
+                // font-family: monospace;
+
                 font-family: 'American Typewriter', sans-serif;
+               
 
                 color: tan;
 

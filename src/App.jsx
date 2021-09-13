@@ -7,6 +7,8 @@ import Contact from "./components/contact/Contact";
 import Menu from "./components/menu/Menu";
 // import Footer from "./components/footer/Footer";
 
+import Projects from "./components/projects/Projects";
+
 import Home from "./components/intro";
 
 import "./app.scss"
@@ -16,7 +18,8 @@ import { useState } from "react";
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { MenuOpen } from "@material-ui/icons";
-import ParticlesBg from 'particles-bg'
+import ParticlesBg from 'particles-bg';
+// import Projects from "./components/projects/Projects";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,7 +33,8 @@ function App() {
         <Switch className="sections">
           <Route path="/" exact component={Home} />
           {/* <Route path="/" exact component={() => <Intro />} /> */}
-          <Route path="/projects" exact component={() => <Portfolio />} />
+          {/* <Route path="/portfolio" exact component={() => <Portfolio />} /> */}
+          <Route path="/projects" exact component={Projects} />
           <Route path="/works" exact component={() => <Works />} />
           <Route path="/testimonials" exact component={() => <Testimonials />} />
           <Route path="/contact" exact component={() => <Contact />} />

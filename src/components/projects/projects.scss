@@ -1,0 +1,37 @@
+#projects {
+
+    .element {
+        // display: inline-block;
+        padding-bottom: 3px;
+    }
+    .element:after {
+        content: '';
+        display: block;
+        margin: auto;
+        height: 2px;
+        animation: underline 3s infinite;
+    }
+    @keyframes underline {
+      0% { width: 2%; background-color: white;}
+      100% {width: 15%; background-color: transparent;}
+    }
+
+    h2 {
+        // color: white;
+        text-align: center;
+        padding-top: 5vh;
+        font-weight: 500;
+        // font-size: 30px;
+
+        color: #fff;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 0.15em;
+        
+        // display: inline-block;
+        // padding: 15px 20px;
+        // position: relative;
+    }
+    
+    
+}
