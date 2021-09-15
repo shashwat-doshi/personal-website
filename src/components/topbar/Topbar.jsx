@@ -2,7 +2,16 @@ import "./topbar.scss";
 import {Person, Mail, PictureAsPdf} from "@material-ui/icons"; // import Person and Mail material-ui icons (refer to the material-ui icons website)
 import Menu from "../menu/Menu";
 
+import { useHistory } from "react-router-dom";
+
 export default function Topbar({ isOpen, setOpen }) {
+
+    const history = useHistory();
+
+    const handleHomeClick = () => {
+        history.push("/");
+    };
+
     return (
         <div className={"topbar " + (isOpen && "active")}> {/* "topbar " + (open && "active") means that if isOpen is true, then append topbar to active. NOTE THAT THERE IS A SPACE AFTER "topbar". */}
             <div className="wrapper">
@@ -10,7 +19,7 @@ export default function Topbar({ isOpen, setOpen }) {
                     
 
 
-                    <div className="hamburger" onClick={()=>setOpen(!isOpen)}> 
+                    <div className="hamburger" onClick={()=>setOpen(!isOpen) }> 
                     {/* this means that set setOpen to the opposite of what value it had before, basically toggle!*/}
                         <span className="line1"></span>
                         <span className="line2"></span>
@@ -34,7 +43,7 @@ export default function Topbar({ isOpen, setOpen }) {
                         <a href="https://github.com/shashwat-doshi" id="topbarLink"><GitHub className="icon"/>
                         <span>Github</span></a>
                     </div> */}
-                    <a href="#intro" className="logo">SD</a> {/* referring by id */}
+                    <a onClick={handleHomeClick} className="logo">SD</a> {/* referring by id */}
                 </div>
             </div>
         </div>

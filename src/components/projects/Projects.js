@@ -17,21 +17,23 @@ import project4 from "../../images/doodlejump.jpg";
 import project5 from "../../images/doodlejump.jpg";
 import project6 from "../../images/doodlejump.jpg";
 
+import "@material-ui/icons";
+
 import "./projects.scss";
 
 import "./stars.scss";
 import { Icon } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
-  mainContainer: {
-    width: "100%",
-    height: "calc(100vh - 70px)", // each section's height = 100vh - topbar's height(which is 70px (refer to topbar.scss))
-    //background-color: lightsalmon;
+  // mainContainer: {
+  //   width: "100%",
+  //   //height: "calc(100vh - 70px)", // each section's height = 100vh - topbar's height(which is 70px (refer to topbar.scss))
+  //   //background-color: lightsalmon;
 
-    position: "relative", // so that the text typed is not hidden behind the background color
-    top: "70px", // start section after 70px (which is at end of topbar)  
-    // background: "#233",
-  },
+  //   position: "relative", // so that the text typed is not hidden behind the background color
+  //   top: "70px", // start section after 70px (which is at end of topbar)  
+  //   // background: "#233",
+  // },
   cardContainer: {
     maxWidth: 345,
     margin: "3rem auto",
@@ -90,50 +92,72 @@ const projects = [
 const Projects = () => {
   const classes = useStyles();
   return (
-    <div id="home" className="intro route bg-image background">
-      <div id="stars" />
-      <div id="stars2" />
-      <div id="stars3" />
+    <div className="sections">
+      <div id="home" className="intro route bg-image background">
+        <div id="stars" />
+        <div id="stars2" />
+        <div id="stars3" />
 
-      <Box component="div" className={classes.mainContainer} id="projects">
-        <div class="element">
-          <h2>Projects</h2>
+        <Box component="div" className={classes.mainContainer} id="projects">
+          <div class="element">
+            <h2>Projects</h2>
+          </div>
+          <Grid container justify="center">
+            {/* Projects */}
+            {projects.map((project, i) => (
+              <Grid item xs={12} sm={8} md={4} key={i}>
+                <Card className={classes.cardContainer}>
+                  <CardActionArea>
+                    <CardMedia
+                      component="img"
+                      alt="Project 1"
+                      height="140"
+                      image={project.image}
+                    />
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom>
+                        {project.name}
+                      </Typography>
+                      <Typography variant="body2" color="textSecondary">
+                        {project.description}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                  <CardActions>
+
+                    <Button size="small" color="primary">
+                      Share
+                    </Button>
+                    <Button size="small" color="primary">
+                      Live Demo
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      </div>
+      <footer class="site-footer">
+        <div class="container">
+          <h3>That's all on this page folks!</h3>
+          <ul class="social-icons">
+            <i class="fab fa-facebook-f" id="socIcon"></i>
+            <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"/>
+            <li><a class="facebook" href="https://www.facebook.com/shashwat444/" target="_blank"><i class="fab fa-facebook" id="socIcon"></i></a></li>
+            <li><a class="instagram" href="https://www.instagram.com/doshiascharged/" target="_blank"><i class="fab fa-instagram" id="socIcon"></i></a></li>
+            <li><a class="linkedin" href="https://www.linkedin.com/in/shashwatdoshi/" target="_blank"><i class="fab fa-linkedin-in" id="socIcon"></i></a></li>
+            <li><a class="github" href="https://github.com/shashwat-doshi" target="_blank"><i class="fab fa-github" id="socIcon"></i></a></li>
+          </ul>
+
+          <em>"The people who are crazy enough to think that they can change the world are the ones who do."</em><em className="quoteAuthor"> ~ Steve Jobs</em>
+
+          <div className="madebyFooter">
+            <p class="copyright-text"> Made by Shashwat Doshi using React <i class="fab fa-react" id="ReactIcon"></i>
+            </p>
+          </div>
         </div>
-        <Grid container justify="center">
-          {/* Projects */}
-          {projects.map((project, i) => (
-            <Grid item xs={12} sm={8} md={4} key={i}>
-              <Card className={classes.cardContainer}>
-                <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    alt="Project 1"
-                    height="140"
-                    image={project.image}
-                  />
-                  <CardContent>
-                    <Typography variant="h5" gutterBottom>
-                      {project.name}
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary">
-                      {project.description}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-                <CardActions>
-                 
-                  <Button size="small" color="primary">
-                    Share
-                  </Button>
-                  <Button size="small" color="primary">
-                    Live Demo
-                  </Button>
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
+      </footer>
     </div>
   );
 };

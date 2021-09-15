@@ -1,72 +1,47 @@
-import "./menu.scss"
-import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import "./menu.scss";
+import { useHistory } from "react-router-dom";
 
-function Menu(props) {
+export default function Menu({ isOpen, setOpen }) {
+
+    const history = useHistory();
+
+    const handleHomeClick = () => {
+        history.push("/");
+    };
+
+    const handleProjectClick = () => {
+        history.push("/projects");
+    };
+
+
     return (
-        // <div className={"menu " + (isOpen && "active")}>
-        <div className="menu">
+        <div className={"menu " + (isOpen && "active")}>
             <ul>
-                <li
-                    class={`${props.location.pathname === "/" ? "active" : ""}`}
-                    // onClick={() => setOpen(false)}
-                >
-                {/* <a href="#intro">Home</a> */}
-                    <Link class="nav-link" to="/">
-                        Home
-                        {/* <span class="sr-only">(current)</span> */}
-                        {/* <span>(current)</span> */}
-                    </Link>
+                <li onClick={() => setOpen(false)}>
+                    <a onClick={handleHomeClick}>Home</a>
                 </li>
-                <li 
-                class={`${props.location.pathname === "/portfolio" ? "active" : ""}`}
-                // onClick={() => setOpen(false)}
-                >
-                    {/* <a href="#portfolio">Portfolio</a> */}
-                    <Link class="nav-link" to="/portfolio">
-                        Portfolio
-                        {/* <span class="sr-only">(current)</span> */}
-                    </Link>
+                <li onClick={() => setOpen(false)}>
+                    <a onClick={handleProjectClick}>Projects</a>
                 </li>
-                <li 
-                class={`${props.location.pathname === "/works" ? "active" : ""}`}
-                // onClick={() => setOpen(false)}
-                >
-                    {/* <a href="#portfolio">Portfolio</a> */}
-                    <Link class="nav-link" to="/works">
-                        Works
-                    </Link>
+                <li onClick={() => setOpen(false)}>
+                    <a >Experience</a>
                 </li>
-                <li 
-                class={`${props.location.pathname === "/testimonials" ? "active" : ""}`}
-                // onClick={() => setOpen(false)}
-                >
-                    {/* <a href="#portfolio">Portfolio</a> */}
-                    <Link class="nav-link" to="/testimonials">
-                        Testimonials
-                    </Link>
+                <li onClick={() => setOpen(false)}>
+                    <a >Contact me</a>
                 </li>
-
                 {/* <li onClick={() => setOpen(false)}>
+                    <a href="#portfolio">Portfolio</a>
+                </li>
+                <li onClick={() => setOpen(false)}>
+                    <a href="#works">Works</a>
+                </li>
+                <li onClick={() => setOpen(false)}>
                     <a href="#testimonials">Testimonials</a>
-                </li> */}
-
-                <li 
-                class={`${props.location.pathname === "/contact" ? "active" : ""}`}
-                // onClick={() => setOpen(false)}
-                >
-                    {/* <a href="#portfolio">Portfolio</a> */}
-                    <Link class="nav-link" to="/contact">
-                        Contact
-                    </Link>
                 </li>
-                {/* <li onClick={() => setOpen(false)}>
+                <li onClick={() => setOpen(false)}>
                     <a href="#contact">Contact</a>
                 </li> */}
             </ul>
-
         </div>
-    )
+    );
 }
-
-export default withRouter(Menu);
