@@ -1,6 +1,5 @@
 import Topbar from "./components/topbar/Topbar";
 import Intro from "./components/intro/Intro";
-import Portfolio from "./components/portfolio/Portfolio";
 import Works from "./components/works/Works";
 import Testimonials from "./components/testimonials/Testimonials";
 import Contact from "./components/contact/Contact";
@@ -32,7 +31,6 @@ function App() {
         <Switch className="sections">
           <Route path="/" exact component={Home} />
           {/* <Route path="/" exact component={() => <Intro />} /> */}
-          {/* <Route path="/portfolio" exact component={() => <Portfolio />} /> */}
           <Route path="/projects" exact component={Projects} />
           <Route path="/works" exact component={() => <Works />} />
           <Route path="/testimonials" exact component={() => <Testimonials />} />
