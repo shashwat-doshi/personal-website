@@ -15,6 +15,7 @@ import { useState } from "react";
 
 
 import React from "react";
+import { Redirect } from "react-router-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { MenuOpen } from "@material-ui/icons";
 import ParticlesBg from 'particles-bg';
@@ -35,6 +36,7 @@ function App() {
           <Route path="/works" exact component={() => <Works />} />
           <Route path="/testimonials" exact component={() => <Testimonials />} />
           <Route path="/contact" exact component={() => <Contact />} />
+          <Redirect to="/" />
         </Switch>
       </Router>
       {/* <Footer /> */}

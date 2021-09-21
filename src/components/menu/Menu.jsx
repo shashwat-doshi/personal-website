@@ -13,6 +13,10 @@ export default function Menu({ isOpen, setOpen }) {
         history.push("/projects");
     };
 
+    const handleContactClick = () => {
+        history.push("/contact");
+    };
+
 
     return (
         <div className={"menu " + (isOpen && "active")}>
@@ -27,7 +31,7 @@ export default function Menu({ isOpen, setOpen }) {
                     <a >Experience</a>
                 </li>
                 <li onClick={() => setOpen(false)}>
-                    <a >Contact me</a>
+                    <a onClick={handleContactClick}>Contact Me</a>
                 </li>
                 {/* <li onClick={() => setOpen(false)}>
                     <a href="#portfolio">Portfolio</a>

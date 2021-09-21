@@ -1,7 +1,15 @@
-import firebase from "firebase";
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
+// import * as firebase from 'firebase'
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
 
-var firebaseApp = firebase.initializeApp({
+
+// import firebase from 'firebase';
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
+// import * as firebase from 'firebase/app';
+// import 'firebase/firestore';
+// import 'firebase/auth';
+
+var firebaseConfig = {
 
     // Import the functions you need from the SDKs you need
 
@@ -16,8 +24,11 @@ var firebaseApp = firebase.initializeApp({
     messagingSenderId: "419054102183",
     appId: "1:419054102183:web:460e02f62e67f17dc85d82"
 
-});
+};
 
-var db = firebaseApp.firestore();
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// const db = firebaseApp.firestore();
 
 export { db };
