@@ -1,5 +1,4 @@
 import Topbar from "./components/topbar/Topbar";
-import Intro from "./components/intro/Intro";
 import Works from "./components/works/Works";
 import Testimonials from "./components/testimonials/Testimonials";
 import Contact from "./components/contact/Contact";
@@ -17,8 +16,7 @@ import { useState } from "react";
 import React from "react";
 import { Redirect } from "react-router-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { MenuOpen } from "@material-ui/icons";
-import ParticlesBg from 'particles-bg';
+
 // import Projects from "./components/projects/Projects";
 
 function App() {

@@ -1,23 +1,19 @@
 import "./intro.scss"
-import { ExpandMore, GitHub, LinkedIn, ArrowRight, ArrowBackIos } from "@material-ui/icons"
+import { ExpandMore, ArrowRight, ArrowBackIos } from "@material-ui/icons"
 
-import { init } from 'ityped'
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import React from "react";
-
-import { Link } from 'react-router-dom'
-
-import ParticlesBg from 'particles-bg'
 
 import Typography from "@material-ui/core/Typography";
 // import Avatar from "@material-ui/core/Avatar";
-import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Typed from "react-typed";
 import { makeStyles } from "@material-ui/core/styles";
-
 import Particles from "./Particles";
-// import avatar from "../../introPic.png";
+
+import "./highlights";
+
+
 
 
 
@@ -226,7 +222,7 @@ export default function Intro() {
                     </div>
                 </div>
             </div>
-            <div className="highlights">
+            {/* <div className="highlights">
                 <section class="info">
                     <h2>Highlights</h2>
                 </section>
@@ -278,9 +274,53 @@ export default function Intro() {
                             </div>
                         </a>
                     </div>
-                    {/* https://images.unsplash.com/photo-1520839090488-4a6c211e2f94?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=38951b8650067840307cba514b554ba5&auto=format&fit=crop&w=1350&q=80 */}
                 </section>
+            </div> */}
+            <div class="blog-slider">
+                <div class="blog-slider__wrp swiper-wrapper">
+                    <div class="blog-slider__item swiper-slide">
+                        <div class="blog-slider__img">
+
+                            <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1535759872/kuldar-kalvik-799168-unsplash.jpg" alt="" />
+                        </div>
+                        <div class="blog-slider__content">
+                            <span class="blog-slider__code">26 December 2019</span>
+                            <div class="blog-slider__title">Lorem Ipsum Dolor</div>
+                            <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? </div>
+                            <a href="#" class="blog-slider__button">READ MORE</a>
+                        </div>
+                    </div>
+                    <div class="blog-slider__item swiper-slide">
+                        <div class="blog-slider__img">
+                            <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1535759871/jason-leung-798979-unsplash.jpg" alt="" />
+                        </div>
+                        <div class="blog-slider__content">
+                            <span class="blog-slider__code">26 December 2019</span>
+                            <div class="blog-slider__title">Lorem Ipsum Dolor2</div>
+                            <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?</div>
+                            <a href="#" class="blog-slider__button">READ MORE</a>
+                        </div>
+                    </div>
+
+                    <div class="blog-slider__item swiper-slide">
+                        <div class="blog-slider__img">
+                            <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1535759871/alessandro-capuzzi-799180-unsplash.jpg" alt="" />
+                        </div>
+                        <div class="blog-slider__content">
+                            <span class="blog-slider__code">26 December 2019</span>
+                            <div class="blog-slider__title">Lorem Ipsum Dolor</div>
+                            <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?</div>
+                            <a href="#" class="blog-slider__button">READ MORE</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="blog-slider__pagination"></div>
             </div>
+
+
+
+
             <div className="photography">
                 <Particles />
                 {/* <ParticlesBg num={50} type="lines" bg={true} /> */}

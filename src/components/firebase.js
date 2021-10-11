@@ -1,4 +1,8 @@
 // import * as firebase from 'firebase'
+// import firebase from "firebase";
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth"
+import "firebase/compat/firestore"
 // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
 
 
@@ -9,7 +13,7 @@ import { getFirestore, collection, getDocs } from 'firebase/firestore';
 // import 'firebase/firestore';
 // import 'firebase/auth';
 
-var firebaseConfig = {
+var firebaseApp = firebase.initializeApp({
 
     // Import the functions you need from the SDKs you need
 
@@ -24,10 +28,14 @@ var firebaseConfig = {
     messagingSenderId: "419054102183",
     appId: "1:419054102183:web:460e02f62e67f17dc85d82"
 
-};
+});
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+var db = firebaseApp.firestore();
+
+
+
+// const app = initializeApp(firebaseConfig);
+// const db = getFirestore(app);
 
 // const db = firebaseApp.firestore();
 

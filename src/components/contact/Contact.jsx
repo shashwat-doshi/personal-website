@@ -20,7 +20,7 @@ const Contact = () => {
             message: message,
         })
         .then(() => { // this is called a "promise". it is executed whenever the above db.collection runs and finishes successfully.
-            alert('Message has been submitted ' + "👍" );
+            alert('Message has been submitted :)');
         })
         .catch(error => { // if there is any error in the sending the email, aka in the database.
             alert(error.message); // firebase will handle all the error stuff. We do not need to do anything.
@@ -33,18 +33,18 @@ const Contact = () => {
             <form className="form" onSubmit={handleSubmit}>
                 <h1>Contact Form</h1>
 
-                <label>Name</label>
+                <label>Name <span id="required">*</span></label>
                 <input placeholder="Name" value={name} 
-                    onChange={(e) => setName(e.target.value)} />
+                    onChange={(e) => setName(e.target.value)} required/>
 
-                <label>Email</label>
+                <label>Email <span id="required">*</span></label>
                 <input placeholder="Email" value={email}
-                    onChange={(e) => setEmail(e.target.value)} />
+                    onChange={(e) => setEmail(e.target.value)} required/>
 
-                <label>Message</label>
+                <label>Message <span id="required">*</span></label>
                 <textarea placeholder="Type your message here..."
                     value={message}
-                    onChange={(e) => setMessage(e.target.value)}>
+                    onChange={(e) => setMessage(e.target.value)} required>
                 </textarea>
                 {/* we have textarea instead of input as we want the text box to be customizbale.. and as message is a lot of words, we need text area instead of input. */}
 
