@@ -1,5 +1,5 @@
 import Topbar from "./components/topbar/Topbar";
-import Works from "./components/works/Works";
+// import Works from "./components/works/Works";
 import Testimonials from "./components/testimonials/Testimonials";
 import Contact from "./components/contact/Contact";
 import Menu from "./components/menu/Menu";
@@ -31,7 +31,7 @@ function App() {
           <Route path="/" exact component={Home} />
           {/* <Route path="/" exact component={() => <Intro />} /> */}
           <Route path="/projects" exact component={Projects} />
-          <Route path="/works" exact component={() => <Works />} />
+          {/* <Route path="/works" exact component={() => <Works />} /> */}
           <Route path="/testimonials" exact component={() => <Testimonials />} />
           <Route path="/contact" exact component={() => <Contact />} />
           <Redirect to="/" />

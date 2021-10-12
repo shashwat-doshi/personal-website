@@ -1,6 +1,5 @@
 import "./topbar.scss";
 import {Person, Mail, PictureAsPdf} from "@material-ui/icons"; // import Person and Mail material-ui icons (refer to the material-ui icons website)
-import Menu from "../menu/Menu";
 
 import { useHistory } from "react-router-dom";
 

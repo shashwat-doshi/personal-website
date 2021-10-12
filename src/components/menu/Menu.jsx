@@ -22,16 +22,16 @@ export default function Menu({ isOpen, setOpen }) {
         <div className={"menu " + (isOpen && "active")}>
             <ul>
                 <li onClick={() => setOpen(false)}>
-                    <a onClick={handleHomeClick}>Home</a>
+                    <a href="javascript:void(0);" onClick={handleHomeClick} rel="noreferrer">Home</a>
                 </li>
                 <li onClick={() => setOpen(false)}>
-                    <a onClick={handleProjectClick}>Projects</a>
+                    <a href="javascript:void(0);" onClick={handleProjectClick} rel="noreferrer">Projects</a>
                 </li>
                 <li onClick={() => setOpen(false)}>
                     <a >Experience</a>
                 </li>
                 <li onClick={() => setOpen(false)}>
-                    <a onClick={handleContactClick}>Contact Me</a>
+                    <a href="javascript:void(0);" onClick={handleContactClick} rel="noreferrer">Contact Me</a>
                 </li>
                 {/* <li onClick={() => setOpen(false)}>
                     <a href="#portfolio">Portfolio</a>

@@ -1,8 +1,11 @@
 import "./intro.scss"
-import { ExpandMore, ArrowRight, ArrowBackIos } from "@material-ui/icons"
+import { ArrowRight, ArrowBackIos } from "@material-ui/icons"
 
-import { useRef, useState } from "react"
+
+import { useState } from "react"
 import React from "react";
+
+import { useHistory } from "react-router-dom";
 
 import Typography from "@material-ui/core/Typography";
 // import Avatar from "@material-ui/core/Avatar";
@@ -20,35 +23,6 @@ import "./highlights";
 
 export default function Intro() {
 
-    const textRef = useRef();
-
-    // let wordList = ["student.", "developer.", "learner.", "foodie.", "cricket enthusiast.", "chocolate-lover."];
-
-    // useEffect(() => {
-    //     //console.log(textRef);
-    //     init(textRef.current, {
-    //         showCursor: true,
-    //         strings: wordList.slice(0, 3).sort(() => Math.random() - 0.5).concat(wordList.slice(3).sort(() => Math.random() - 0.5)),
-    //         backDelay: 700, // 1.5 sec = 1500
-    //         typeSpeed: 150,
-    //         startDelay: 1200,
-    //         cursorChar: "|",
-    //     });
-    // }, [wordList])
-
-    // var cursor = true;
-    // var speed = 400;
-
-
-    // setInterval(() => {
-    //     if(cursor) {
-    //       document.getElementById('cursor').style.opacity = 0;
-    //       cursor = false;
-    //     }else {
-    //         document.getElementById('cursor').style.opacity = 1;
-    //       cursor = true;
-    //     }
-    //   }, speed);
 
     const [currentSlide, setCurrentSlide] = useState(0); // setting state variables for photography slide... intial value is = 0.
 
@@ -82,6 +56,15 @@ export default function Intro() {
             : setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0); // if it is on the right, then if currentSlide number < last slide number, then go to the last slide. Otherwise, go to the first slide (hence the 0 is there at the end of this statement.)
     };
 
+
+
+    const history = useHistory();
+
+    const handleProjectClick = () => {
+        history.push("/projects");
+    };
+
+
     const useStyles = makeStyles((theme) => ({
         avatar: {
             width: theme.spacing(15),
@@ -114,7 +97,7 @@ export default function Intro() {
             <div className="intro">
                 <Box className={classes.typedContainer}>
                     <div className="imgContainer">
-                        <img src="assets/home-main.svg"></img>
+                        <img src="assets/home-main.svg" alt="avatar"/>
                     </div>
 
                     <div className="introText">
@@ -143,38 +126,7 @@ export default function Intro() {
                     </div>
                 </Box>
             </div>
-            {/* <div className="intro" id="intro">
-                <ParticlesBg num={14} type="cobweb" bg={true} />
-                <div className="left">
-                    <div className="imgContainer">
-                        <img src="assets/my_pic.png"></img>
-                    </div>
-                </div>
-                <div className="right">
-                    <div className="wrapper">
-                        <h2>Hi there! I'm</h2>
-                        <h1>Shashwat Doshi</h1>
-                        <h4>( /ʃɑʃwɔːt/ SH-aa-SH-wat )</h4>
-                        <h3>I am a <span ref={textRef}></span></h3>
-
-                        <div className="container">
-
-                            <a className="item" href="https://github.com/shashwat-doshi" target="_blank" >
-                                <GitHub id="socialmedIcon" />
-                                <h3>@shashwat-doshi</h3>
-                            </a>
-                            <a className="item" href="https://www.linkedin.com/in/shashwatdoshi/" target="_blank">
-                                <LinkedIn id="socialmedIcon" />
-                                <h3>LinkedIn</h3>
-                            </a>
-
-                        </div>
-                    </div>
-                    <a href="#aboutMe">
-                        <ExpandMore className="downArrow" />
-                    </a>
-                </div>
-            </div> */}
+            
             <div className="aboutMe" id="aboutMe">
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
                 <div class="about-wrapper">
@@ -192,9 +144,9 @@ export default function Intro() {
                             </div>
 
                             <ul class="icons">
-                                <a href="https://www.facebook.com/shashwat444/" id="iconLink" target="_blank"><li><i class="fab fa-facebook-f"></i></li></a>
-                                <a href="https://www.instagram.com/doshiascharged/" id="iconLink" target="_blank"><li><i class="fab fa-instagram"></i></li></a>
-                                <a href="mailto:shashwatpdoshi@gmail.com" id="iconLink" target="_blank"><li><i class="fab fa-google"></i></li></a>
+                                <a href="https://www.facebook.com/shashwat444/" id="iconLink" target="_blank" rel="noreferrer"><li><i class="fab fa-facebook-f"></i></li></a>
+                                <a href="https://www.instagram.com/doshiascharged/" id="iconLink" target="_blank" rel="noreferrer"><li><i class="fab fa-instagram"></i></li></a>
+                                <a href="mailto:shashwatpdoshi@gmail.com" id="iconLink" target="_blank" rel="noreferrer"><li><i class="fab fa-google"></i></li></a>
                             </ul>
                         </div>
                     </div>
@@ -205,7 +157,7 @@ export default function Intro() {
                         <div class="about-btns">
 
                             <button type="button" class="btn btn-pink" onClick={() => window.open("https://drive.google.com/file/d/1Vf82NTTNe0NpZNjhx1ZybkfnnS8P8xXF/view?usp=sharing", "_blank")}>resume</button>
-                            <button type="button" class="btn btn-white">projects</button>
+                            <button type="button" class="btn btn-white" onClick={handleProjectClick}>projects</button>
                         </div>
 
                         <div className="aboutInfo">
@@ -217,107 +169,58 @@ export default function Intro() {
                         <div className="aboutInfo">
                             <ArrowRight className="arrowRight" /><span className="aboutDesc">I am specializing in the Entrepreneurship stream with a minor in Statistics.</span>
                         </div>
-                        <a href="">
-                            <ExpandMore className="downArrow" /></a>
                     </div>
                 </div>
             </div>
-            {/* <div className="highlights">
-                <section class="info">
-                    <h2>Highlights</h2>
-                </section>
-                <section class="cards-wrapper">
-                    <div class="card-grid-space">
-                        <div class="num">01</div>
-                        <a class="card" href="https://codetheweb.blog/2017/10/06/html-syntax/" style={{ background: `url(https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/html-syntax/cover.jpg)` }}>
-                            <div>
-                                <h1>Project Growth</h1>
-                                <p>An online incubator platform built for the African Impact Initiative.</p>
-                                <div class="date">August 2021</div>
-                                <div class="tags">
-                                    <div class="tag">Django</div>
-                                    <div class="tag">Javascript</div>
-                                    <div class="tag">SQL</div>
-                                    <div class="tag">HTML</div>
-                                    <div class="tag">CSS</div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card-grid-space">
-                        <div class="num">02</div>
-                        <a class="card" href="https://codetheweb.blog/2017/10/06/html-syntax/" style={{ background: `url(https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/html-syntax/cover.jpg)` }}>
-                            <div>
-                                <h1>Doodle Jump</h1>
-                                <p>A fully-functional Doodle Jump game built through the use of Assembly Language.</p>
-                                <div class="date">May 2021</div>
-                                <div class="tags">
-                                    <div class="tag">Assembly Language</div>
-                                    <div class="tag">MARS Software</div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card-grid-space">
-                        <div class="num">03</div>
-                        <a class="card" href="https://codetheweb.blog/2017/10/14/links-images-about-file-paths/" style={{ background: `url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/links-images-about-file-paths/cover.jpg')` }}>
-                            <div>
-                                <h1>GameseeAI</h1>
-                                <p>A surveillance web-application built for monitoring our personal belongings when left unattended in a public space.</p>
-                                <div class="date">February 2020</div>
-                                <div class="tags">
-                                    <div class="tag">Python</div>
-                                    <div class="tag">Javascript</div>
-                                    <div class="tag">HTML</div>
-                                    <div class="tag">CSS</div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-            </div> */}
-            <div class="blog-slider">
-                <div class="blog-slider__wrp swiper-wrapper">
-                    <div class="blog-slider__item swiper-slide">
-                        <div class="blog-slider__img">
 
-                            <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1535759872/kuldar-kalvik-799168-unsplash.jpg" alt="" />
-                        </div>
-                        <div class="blog-slider__content">
-                            <span class="blog-slider__code">26 December 2019</span>
-                            <div class="blog-slider__title">Lorem Ipsum Dolor</div>
-                            <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? </div>
-                            <a href="#" class="blog-slider__button">READ MORE</a>
-                        </div>
-                    </div>
-                    <div class="blog-slider__item swiper-slide">
-                        <div class="blog-slider__img">
-                            <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1535759871/jason-leung-798979-unsplash.jpg" alt="" />
-                        </div>
-                        <div class="blog-slider__content">
-                            <span class="blog-slider__code">26 December 2019</span>
-                            <div class="blog-slider__title">Lorem Ipsum Dolor2</div>
-                            <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?</div>
-                            <a href="#" class="blog-slider__button">READ MORE</a>
-                        </div>
-                    </div>
+            <div className="highlights">
 
-                    <div class="blog-slider__item swiper-slide">
-                        <div class="blog-slider__img">
-                            <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1535759871/alessandro-capuzzi-799180-unsplash.jpg" alt="" />
+                <h2>Highlights</h2>
+
+                <div class="container">
+                    <div class="card__container">
+                        <div class="card" onClick={handleProjectClick}>
+                            <div class="card__content">
+                                <h3 class="card__header">Project Growth</h3>
+                                <p class="card__info">An online incubator platform designed for young African entrepreneurs to build their startups.</p>
+                                <div className="allSkills">
+                                    <button className="skill">Django</button>
+                                    <button className="skill">Javascript</button>
+                                    <button className="skill">HTML5</button>
+                                    <button className="skill">SCSS</button>
+                                </div>
+                                {/* <button class="card__button">Read now</button> */}
+                            </div>
                         </div>
-                        <div class="blog-slider__content">
-                            <span class="blog-slider__code">26 December 2019</span>
-                            <div class="blog-slider__title">Lorem Ipsum Dolor</div>
-                            <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?</div>
-                            <a href="#" class="blog-slider__button">READ MORE</a>
+                        <div class="card" onClick={handleProjectClick}>
+                            <div class="card__content">
+                                <h3 class="card__header">InSight</h3>
+                                <p class="card__info">A seamless web application that gives personalized recommendations for your post to get most trending on Instagram, Twitter, and Facebook.</p>
+                                <div className="allSkills">
+                                    <button className="skill">Node.js</button>
+                                    <button className="skill">AngularJS</button>
+                                    <button className="skill">HTML5</button>
+                                    <button className="skill">SCSS</button>
+                                </div>
+                                {/* <button class="card__button">Read now</button> */}
+                            </div>
+                        </div>
+                        <div class="card" onClick={handleProjectClick}>
+                            <div class="card__content">
+                                <h3 class="card__header">Doodle Jump</h3>
+                                <p class="card__info">The infamous Doodle Jump game that supports shooting enemies and obstacles, and in-game score calculations.</p>
+                                <div className="allSkills">
+                                    <button className="skill">Assembly Language</button>
+                                    <button className="skill">MIPS Software</button>
+                                    <button className="skill">Game logic</button>
+                                </div>
+                                {/* <button class="card__button">Read now</button> */}
+                            </div>
                         </div>
                     </div>
-
                 </div>
-                <div class="blog-slider__pagination"></div>
-            </div>
 
+            </div>
 
 
 
@@ -338,14 +241,15 @@ export default function Intro() {
                 <ArrowBackIos className="arrow left" onClick={() => handlePhotoArrowClick("left")} />
                 <ArrowBackIos className="arrow right" onClick={() => handlePhotoArrowClick()} />
             </div>
+
             <footer class="site-footer">
                 <div class="container">
                     <h3>That's all on this page folks!</h3>
                     <ul class="social-icons">
-                        <li><a class="facebook" href="https://www.facebook.com/shashwat444/" target="_blank"><i class="fab fa-facebook-f" id="socIcon"></i></a></li>
-                        <li><a class="instagram" href="https://www.instagram.com/doshiascharged/" target="_blank"><i class="fab fa-instagram" id="socIcon"></i></a></li>
-                        <li><a class="linkedin" href="https://www.linkedin.com/in/shashwatdoshi/" target="_blank"><i class="fab fa-linkedin-in" id="socIcon"></i></a></li>
-                        <li><a class="github" href="https://github.com/shashwat-doshi" target="_blank"><i class="fab fa-github" id="socIcon"></i></a></li>
+                        <li><a class="facebook" href="https://www.facebook.com/shashwat444/" target="_blank" rel="noreferrer"><i class="fab fa-facebook-f" id="socIcon"></i></a></li>
+                        <li><a class="instagram" href="https://www.instagram.com/doshiascharged/" target="_blank" rel="noreferrer"><i class="fab fa-instagram" id="socIcon"></i></a></li>
+                        <li><a class="linkedin" href="https://www.linkedin.com/in/shashwatdoshi/" target="_blank" rel="noreferrer"><i class="fab fa-linkedin-in" id="socIcon"></i></a></li>
+                        <li><a class="github" href="https://github.com/shashwat-doshi" target="_blank" rel="noreferrer"><i class="fab fa-github" id="socIcon"></i></a></li>
                     </ul>
 
                     <em>"The people who are crazy enough to think that they can change the world are the ones who do."</em><em className="quoteAuthor"> ~ Steve Jobs</em>
@@ -356,10 +260,6 @@ export default function Intro() {
                     </div>
                 </div>
             </footer>
-
-
-
-
         </div>
 
 

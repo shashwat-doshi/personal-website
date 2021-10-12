@@ -1,17 +1,6 @@
-// import * as firebase from 'firebase'
-// import firebase from "firebase";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth"
 import "firebase/compat/firestore"
-// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
-
-
-// import firebase from 'firebase';
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
-// import * as firebase from 'firebase/app';
-// import 'firebase/firestore';
-// import 'firebase/auth';
 
 var firebaseApp = firebase.initializeApp({
 
@@ -31,12 +20,5 @@ var firebaseApp = firebase.initializeApp({
 });
 
 var db = firebaseApp.firestore();
-
-
-
-// const app = initializeApp(firebaseConfig);
-// const db = getFirestore(app);
-
-// const db = firebaseApp.firestore();
 
 export { db };
