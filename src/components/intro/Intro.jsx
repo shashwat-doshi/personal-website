@@ -113,7 +113,7 @@ export default function Intro() {
                                     "I am a learner",
                                     "I am a foodie",
                                     "I am a cricket enthusiast",
-                                    "I am a chocolate-lover",
+                                    "I am an amateur photographer",
                                 ]}
                                 typeSpeed={90}
                                 backSpeed={60}

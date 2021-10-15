@@ -7,6 +7,8 @@ import Menu from "./components/menu/Menu";
 
 import Projects from "./components/projects/Projects";
 
+import Footer from "./components/footer/Footer";
+
 import Home from "./components/intro";
 
 import "./app.scss"
@@ -32,10 +34,12 @@ function App() {
           {/* <Route path="/" exact component={() => <Intro />} /> */}
           <Route path="/projects" exact component={Projects} />
           {/* <Route path="/works" exact component={() => <Works />} /> */}
+          {/* <Route path="/about" exact component={() => <About />} /> */}
           <Route path="/testimonials" exact component={() => <Testimonials />} />
           <Route path="/contact" exact component={() => <Contact />} />
           <Redirect to="/" />
         </Switch>
+        {/* <Footer /> */}
       </Router>
       {/* <Footer /> */}
 
